@@ -1,0 +1,35 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "gdb",
+      "request": "launch",
+      "name": "Debug(GDB) day1",
+      "target": "${workspaceFolder}/2021/day1/target/debug/day1",
+      "cwd": "${workspaceRoot}/2021/day1",
+      "valuesFormatting": "prettyPrinters",
+      "sourceMap": {
+        "/rustc/f1edd0429582dd29cccacaf50fd134b05593bd9c": "${env:HOME}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust"
+      },
+      "gdbpath": "/home/joel/.cargo/bin/rust-gdb"
+      // "gdbpath": "rr replay -d rust-gdb --"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug(LLDB) day1",
+      "program": "${workspaceFolder}/2021/day1/target/debug/day1",
+      "args": [],
+      "cwd": "${workspaceFolder}/2021/day1",
+      "sourceLanguages": [
+        "rust"
+      ],
+      "sourceMap": {
+        "/rustc/f1edd0429582dd29cccacaf50fd134b05593bd9c": "${env:HOME}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust"
+      }
+    }
+  ]
+}
