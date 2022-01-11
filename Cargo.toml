@@ -1,3 +1,11 @@
 [workspace]
 
 members = ["utils", "2021/day1", "2021/day2"]
+
+[profile.dev]
+debug     = true
+opt-level = 0
+
+[profile.release]
+debug     = false
+opt-level = 3

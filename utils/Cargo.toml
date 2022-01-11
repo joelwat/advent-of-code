@@ -7,11 +7,3 @@ version = "0.1.0"
 
 [dependencies]
 thiserror = "1.0.30"
-
-[profile.dev]
-debug     = true
-opt-level = 0
-
-[profile.release]
-debug     = false
-opt-level = 3
