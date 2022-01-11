@@ -33,7 +33,7 @@ pub fn run_part2() -> Result<(), AppError> {
 }
 
 pub fn run_part1() -> Result<(), AppError> {
-    let data = file_reader::load_data()?;
+    let data = load_data()?;
     let mut increased: usize = 0;
     let mut prev: Option<&u64> = None;
 
