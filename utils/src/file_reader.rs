@@ -6,9 +6,9 @@ use std::{
 
 use crate::app_errors::AppError;
 
-pub fn load_data() -> Result<Vec<u64>, AppError> {
-    if Path::new("src/input.txt").exists() {
-        let file = File::open("src/input.txt")?;
+pub fn load_data(file_path: &Path) -> Result<Vec<u64>, AppError> {
+    if file_path.exists() {
+        let file = File::open(file_path)?;
 
         let mut reader = BufReader::new(file);
         let mut line = String::new();
