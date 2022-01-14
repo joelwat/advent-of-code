@@ -4,6 +4,8 @@ use thiserror::Error;
 
 #[derive(Debug, Error)]
 pub enum AppError {
+    #[error("{0}")]
+    GenericError(String),
     #[error("Error opening file: {0}")]
     IoError(#[from] std::io::Error),
 
