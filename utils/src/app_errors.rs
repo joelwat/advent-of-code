@@ -1,3 +1,5 @@
+use std::num::ParseIntError;
+
 use thiserror::Error;
 
 #[derive(Debug, Error)]
@@ -7,4 +9,11 @@ pub enum AppError {
 
     #[error("File not found.")]
     FileNotFound,
+
+    #[error("Error parsing line: {message}")]
+    ParseIntError {
+        message: String,
+        #[source]
+        source:  ParseIntError,
+    },
 }
