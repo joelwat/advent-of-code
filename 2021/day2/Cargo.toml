@@ -1,0 +1,11 @@
+[package]
+edition = "2021"
+name    = "day2"
+version = "0.1.0"
+
+[lib]
+name = "libday2"
+path = "src/lib.rs"
+
+[dependencies]
+utils = { path = "../../utils" }
