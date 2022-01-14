@@ -1,11 +1,16 @@
 mod window;
 
-use utils::{app_errors::AppError, file_reader::load_data};
+use std::path::Path;
 
+use utils::{
+    app_errors::AppError,
+    file_reader::load_data,
+};
 use window::Window;
 
 pub fn run_part2() -> Result<(), AppError> {
-    let data = load_data()?;
+    let file_path = Path::new("2021/day1/input.txt");
+    let data = load_data::<u64>(file_path, &parser)?;
     let mut increased: usize = 0;
     let mut window = Window::new();
     let mut cur_sum: u64;
@@ -33,7 +38,8 @@ pub fn run_part2() -> Result<(), AppError> {
 }
 
 pub fn run_part1() -> Result<(), AppError> {
-    let data = load_data()?;
+    let file_path = Path::new("2021/day1/input.txt");
+    let data = load_data::<u64>(file_path, &parser)?;
     let mut increased: usize = 0;
     let mut prev: Option<&u64> = None;
 
@@ -58,4 +64,17 @@ pub fn run_part1() -> Result<(), AppError> {
     );
 
     Ok(())
+}
+
+pub fn parser(str: &str) -> Result<u64, AppError> {
+    let parsed = str.parse::<u64>();
+
+    if let Err(err) = parsed {
+        return Err(AppError::ParseIntError {
+            source:  err,
+            message: str.to_string(),
+        });
+    }
+
+    Ok(parsed.unwrap())
 }
