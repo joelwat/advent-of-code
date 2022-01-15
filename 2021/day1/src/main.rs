@@ -1,13 +1,15 @@
 use std::process;
 
-#[allow(unused_imports)]
 use libday1::{
     run_part1,
     run_part2,
 };
+use utils::cmd::ask_user;
 
 fn main() {
-    if let Err(err) = run_part2() {
+    let run_fn = ask_user(run_part1, run_part2).expect("Failed getting uesr input");
+
+    if let Err(err) = run_fn() {
         eprintln!("Can I haz b0rken?!");
         eprintln!("{:#}", err);
 
