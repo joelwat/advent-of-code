@@ -11,7 +11,7 @@ pub enum Command {
 pub struct SubCommand(pub Command);
 
 impl SubCommand {
-    pub(crate) fn new(direction: String, value: u64) -> Self {
+    pub(crate) fn new(direction: &str, value: u64) -> Self {
         let cmd = if direction == "down" {
             Command::Down(value)
         } else if direction == "forward" {
@@ -32,22 +32,22 @@ impl TryFrom<Vec<&str>> for SubCommand {
     fn try_from(parts: Vec<&str>) -> Result<Self, Self::Error> {
         let convert = || -> Result<Self, Self::Error> {
             Ok(SubCommand::new(
-                parts.get(0).unwrap().to_owned().to_string(),
+                parts.get(0).unwrap().to_owned(),
                 parts.get(1).unwrap().to_owned().parse().unwrap(),
             ))
         };
 
-        match convert() {
-            Ok(command) => Ok(command),
-            Err(_) => {
-                let vec_as_string: String =
-                    parts.iter().fold(String::from(""), |acc, val| -> String {
-                        format!("{:?} {:?}", acc, val.to_string())
-                    });
-                let message = format!("Error converting {:#?} into SubCommand", vec_as_string);
+        let res = convert();
 
-                Err(AppError::GenericError(message))
-            },
+        if res.is_err() {
+            let vec_as_string: String = parts.iter().fold(String::from(""), |acc, val| -> String {
+                format!("{:?} {:?}", acc, val.to_string())
+            });
+            let message = format!("Error converting {:#?} into SubCommand", vec_as_string);
+
+            return Err(AppError::GenericError(message));
         }
+
+        res
     }
 }
