@@ -19,4 +19,6 @@ pub enum AppError {
         #[source]
         source:  ParseIntError,
     },
+    #[error("Error getting user input")]
+    UserInputError,
 }
