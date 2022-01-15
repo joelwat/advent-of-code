@@ -16,7 +16,7 @@ pub fn run_part2() -> Result<(), AppError> {
     let mut cur_sum: u64;
     let mut prev_sum: u64;
 
-    for depth in &data {
+    for depth in data {
         window.slide(depth);
 
         if window.is_ready() {
