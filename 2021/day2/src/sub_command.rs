@@ -41,7 +41,7 @@ impl TryFrom<Vec<&str>> for SubCommand {
 
         if res.is_err() {
             let vec_as_string: String = parts.iter().fold(String::from(""), |acc, val| -> String {
-                format!("{:?} {:?}", acc, val.to_string())
+                format!("{:?} {:?}", acc, (*val).to_string())
             });
             let message = format!("Error converting {:#?} into SubCommand", vec_as_string);
 
