@@ -8,4 +8,4 @@ version = "0.1.0"
 [dependencies]
 console   = "0.15"
 dialoguer = "0.11"
-thiserror = "1.0.50"
+thiserror = "1.0.51"
