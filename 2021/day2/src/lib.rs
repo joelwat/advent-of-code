@@ -55,7 +55,7 @@ pub fn run_part2() -> Result<(), AppError> {
 }
 
 pub fn parse_command(str: &str) -> Result<SubCommand, AppError> {
-    let parts: Vec<&str> = str.split_whitespace().clone().into_iter().collect();
+    let parts: Vec<&str> = str.split_whitespace().clone().collect();
 
     let parsed = SubCommand::try_from(parts)?;
 

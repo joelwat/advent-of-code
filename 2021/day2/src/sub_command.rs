@@ -32,7 +32,7 @@ impl TryFrom<Vec<&str>> for SubCommand {
     fn try_from(parts: Vec<&str>) -> Result<Self, Self::Error> {
         let convert = || -> Result<Self, Self::Error> {
             Ok(SubCommand::new(
-                parts.get(0).unwrap().to_owned(),
+                parts.first().unwrap().to_owned(),
                 parts.get(1).unwrap().to_owned().parse().unwrap(),
             ))
         };

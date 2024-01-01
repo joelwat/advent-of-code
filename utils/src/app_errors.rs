@@ -20,5 +20,8 @@ pub enum AppError {
         source:  ParseIntError,
     },
     #[error("Error getting user input")]
-    UserInputError,
+    UserInputError {
+        #[from]
+        source: dialoguer::Error,
+    },
 }

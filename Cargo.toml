@@ -1,6 +1,6 @@
 [workspace]
-
-members = ["utils", "2021/day1", "2021/day2", "2021/day3"]
+members  = ["utils", "2021/day1", "2021/day2", "2021/day3"]
+resolver = "2"
 
 [profile.dev]
 debug     = true
