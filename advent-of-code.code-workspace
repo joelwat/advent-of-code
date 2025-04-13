@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"rust-analyzer.linkedProjects": [
+			"2021/day1/Cargo.toml"
+		],
+		"lldb.showDisassembly": "auto",
+		"lldb.dereferencePointers": true,
+		"hide-files.files": [
+			".dccache",
+			"2021/day1/.gdb_history"
+		],
+		"workbench.colorCustomizations": {
+			"activityBar.activeBackground": "#ff6729",
+			"activityBar.background": "#ff6729",
+			"activityBar.foreground": "#15202b",
+			"activityBar.inactiveForeground": "#15202b99",
+			"activityBarBadge.background": "#00ff4a",
+			"activityBarBadge.foreground": "#15202b",
+			"commandCenter.border": "#e7e7e799",
+			"sash.hoverBorder": "#ff6729",
+			"statusBar.background": "#f54700",
+			"statusBar.foreground": "#e7e7e7",
+			"statusBarItem.hoverBackground": "#ff6729",
+			"statusBarItem.remoteBackground": "#f54700",
+			"statusBarItem.remoteForeground": "#e7e7e7",
+			"titleBar.activeBackground": "#f54700",
+			"titleBar.activeForeground": "#e7e7e7",
+			"titleBar.inactiveBackground": "#f5470099",
+			"titleBar.inactiveForeground": "#e7e7e799"
+		},
+		"peacock.color": "#F54700"
+	}
+}

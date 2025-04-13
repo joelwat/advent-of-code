@@ -8,12 +8,10 @@
       "type": "gdb",
       "request": "launch",
       "name": "Debug(GDB) day1",
-      "target": "${workspaceFolder}/2021/day1/target/debug/day1",
-      "cwd": "${workspaceRoot}/2021/day1",
+      "target": "${workspaceFolder}/target/debug/day1-2024",
+      "arguments": "./input",
+      "cwd": "${workspaceRoot}/2024/day1",
       "valuesFormatting": "prettyPrinters",
-      "sourceMap": {
-        "/rustc/f1edd0429582dd29cccacaf50fd134b05593bd9c": "${env:HOME}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust"
-      },
       "gdbpath": "/home/joel/.cargo/bin/rust-gdb"
       // "gdbpath": "rr replay -d rust-gdb --"
     },
@@ -30,6 +28,16 @@
       "sourceMap": {
         "/rustc/f1edd0429582dd29cccacaf50fd134b05593bd9c": "${env:HOME}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust"
       }
+    },
+    {
+      "type": "midas-rr",
+      "request": "attach",
+      "name": "Midas RR Launch",
+      "cwd": "${workspaceFolder}/2024/day1",
+      "setupCommands": [
+        "set auto-load safe-path /"
+      ],
+      "stopOnEntry": true,
     }
   ]
 }
